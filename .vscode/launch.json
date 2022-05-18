@@ -1,0 +1,16 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "controlador.App",
+            "projectName": "Editor_texto_5b47d1fe",
+            "vmArgs": "--module-path /Users/jorgegallegosoto/Documents/javafx-sdk-18.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        }
+    ]
+}

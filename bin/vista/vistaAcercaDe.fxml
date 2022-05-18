@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="222.0" maxWidth="450.0" minHeight="222.0" minWidth="450.0" prefHeight="222.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.vistaAcercaDeController">
+   <children>
+      <ImageView fitHeight="173.0" fitWidth="173.0" layoutX="22.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@editor.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="225.0" layoutY="25.0" text="TextEdit">
+         <font>
+            <Font name="System Font" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="225.0" layoutY="94.0" text="Editor de texto simple. v1.0" />
+      <Label layoutX="225.0" layoutY="119.0" text="Jorge Gallego Soto" />
+      <Button fx:id="cerrar" layoutX="298.0" layoutY="159.0" mnemonicParsing="false" onAction="#closeWind" text="Aceptar" />
+   </children>
+</Pane>
