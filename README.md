@@ -1,18 +1,27 @@
-## Getting Started
+## Text editor
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Hello! this is a simple school project (JavaFX intro). It consists on a simple editor like notepad from windows and allows you to save and load .txt docs.
 
-## Folder Structure
+## Wanna know
 
-The workspace contains two folders by default, where:
+This project is developed in the text editor Microsoft Visual Studio Code. If you need another folder structure for another IDE just contact me.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Structure
+
+Well, the workspace has the following directories:
+
+- `src`: the folder which contains the source code:
+    - `model`: still empty, allows to use classes
+    - `controller`: contains the main program and the view controllers
+    - `view`: it only have two views, the main one and an experimental added (About the program)
+- `lib`: it contains the necessary JavaFX libraries compiled
 
 Meanwhile, the compiled output files will be generated in the `bin` folder by default.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+There is also a vscode directory in which you have the JSON files settings and launch. There you can change the JavaFX sdk path and the folder where are generated the compiled files.
 
-## Dependency Management
+## Contact
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Don't remember contact me if you want to use it or modify, I am open to your comments. If you need an English version only tell me. 
+
+- `My mail`: jconsults10
