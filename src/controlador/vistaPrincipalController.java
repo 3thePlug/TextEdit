@@ -1,7 +1,6 @@
 package controlador;
 
-import java.io.File;
-import java.io.FileWriter;
+import java.io.*;
 import java.util.Scanner;
 
 import javafx.event.ActionEvent;
@@ -18,6 +17,9 @@ public class vistaPrincipalController {
     private MenuItem nuevo;
 
     @FXML
+    private MenuItem borrar;
+
+    @FXML
     private MenuItem saveAs;
 
     @FXML
@@ -31,6 +33,11 @@ public class vistaPrincipalController {
 
     private File archivoAbierto;
 
+    @FXML 
+    void initialize(ActionEvent event) {
+        nuevoArchivo(event);
+    }
+    
     @FXML
     void openWind(ActionEvent event) {
         FXMLLoader loader = new FXMLLoader();
@@ -43,6 +50,7 @@ public class vistaPrincipalController {
             sg.centerOnScreen();
             sg.setMaximized(false);
             sg.initModality(Modality.APPLICATION_MODAL);
+            sg.setTitle("Acerca de");
             sg.setScene(scene);
             sg.showAndWait();
         } catch (Exception e) {
@@ -51,6 +59,8 @@ public class vistaPrincipalController {
     }
     @FXML
     void nuevoArchivo(ActionEvent event) {
+        textArea.setText("");
+        archivoAbierto = null;
 
     }
 
@@ -61,7 +71,7 @@ public class vistaPrincipalController {
         archivoAbierto = fileChooser.showOpenDialog(null);
         cargarArchivo(archivoAbierto);  
     }
-
+    @FXML
     private void cargarArchivo(File archivoAbierto) {
         textArea.setText("");
         try {
@@ -84,7 +94,22 @@ public class vistaPrincipalController {
     }
     @FXML
     void guardarComo(ActionEvent event) {
-        
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Guardar archivo");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Text Files", "*.txt")
+        );
+        archivoAbierto = fileChooser.showSaveDialog(null);
+        if (archivoAbierto != null) {
+            try {
+                FileWriter fw = new FileWriter(archivoAbierto);
+                fw.write(textArea.getText());
+                fw.close();
+            } catch (Exception e) {
+                System.out.println("Error al guardar el archivo");
+            }
+        }
+
             
         
     }
@@ -100,6 +125,22 @@ public class vistaPrincipalController {
             alert.setTitle("Error");
             alert.setHeaderText("Error al guardar el archivo");
             alert.setContentText("No se pudo guardar el archivo");
+            alert.showAndWait();
+        }
+    }
+
+    @FXML
+    void borrarArchivo(ActionEvent event) {
+        try {
+            if (archivoAbierto != null) {
+                archivoAbierto.delete();
+            }
+            nuevoArchivo(event);
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error al borrar el archivo");
+            alert.setContentText("No se pudo borrar el archivo");
             alert.showAndWait();
         }
     }

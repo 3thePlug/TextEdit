@@ -12,7 +12,6 @@ public class vistaAcercaDeController {
     @FXML
     void closeWind(ActionEvent event) {
         Stage stage = (Stage) cerrar.getScene().getWindow();
-        // do what you have to do
         stage.close();
     }
 
